@@ -1,0 +1,27 @@
+  
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin-bottom: 5rem;
+}
+
+.background-image{
+  background-image: url("/assets/images/burger-image.jpg");
+  background-position: center; 
+  background-repeat: no-repeat; 
+  background-size: cover; 
+}
+
+.jumbotron {
+  padding: 7rem 3rem !important;
+}
+
+.searchBtn {
+  width: 100%;
+}
+
+.main-h1 {
+  background-color: rgba(0, 30, 30, 0.5);
+}

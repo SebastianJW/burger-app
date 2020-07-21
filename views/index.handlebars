@@ -1,0 +1,72 @@
+{{!-- JumboTron --}}
+  <div class="jumbotron background-image text-center">
+    <div class="container">
+      <h1 class="display-4 text-white main-h1">Create Your Burger</h1>
+    </div>
+  </div>
+  {{!-- End JumboTron --}}
+
+{{!-- input and button --}}
+  <div class="container">
+    <div class="row text-center bg-light">
+      <div class="card card-body">
+
+        <form id="form" class="form-inline align-items-center">
+          <div class="col-md-8">
+            <div class="input-group md-2">
+              <input type="text" id="inputBurger" class="form-control" placeholder="Enter a burger you want to eat">
+            </div>
+          </div>
+
+          <div class="col">
+            <button type="submit" id="submitBurger" class="btn btn-primary submitBurger">Submit Your Burger</button>
+          </div>
+        </form>
+
+      </div>
+    </div>
+  </div>
+  {{!-- End input and button --}}
+
+  {{!-- Burger Lists --}}
+  <div class="container">
+    <div class="row mt-5">
+
+      <div class="col-md-6">
+        <h3 class="text-center">Burgers ready to eat</h3>
+        <div class="list-group">
+
+            {{#each burgers}}
+              {{#unless devoured}}
+                <a href="#" class="list-group-item list-group-item-action">
+                  {{id}}. {{burger_name}}
+                  <button data-id="{{id}}" data-devoured="{{devoured}}" class='btn btn-warning ml-3' id="eatBurger">Eat</button>
+                </a>
+              {{/unless}}
+            {{/each}}
+
+        </div>
+      </div>
+      {{!-- End Burger List --}}
+
+      {{!-- Eaten Burgers --}}
+      <div class="col-md-6">
+        <h3 class="text-center">Burgers you ate</h3>
+        <div class="list-group">
+          
+          {{#each burgers}}
+            {{#if devoured}}
+              <a href="#" class="list-group-item list-group-item-action disabled">
+                {{id}}. {{burger_name}}
+                <i class="fas fa-hamburger"></i>
+              </a>
+            {{/if}}
+          {{/each}}
+
+        </div>
+      </div>
+      {{!-- End Eaten Burgers --}}
+    </div>
+    {{!-- End Row --}}
+  </div>
+  {{!-- End Container --}}
